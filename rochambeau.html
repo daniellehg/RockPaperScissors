@@ -18,9 +18,27 @@
                 <button type="button" class="btn btn-default" id="rock">Rock</button>
                 <button type="button" class="btn btn-default" id="paper">Paper</button>
                 <button type="button" class="btn btn-default" id="scissors">Scissors</button>
+                <button type="button" class="btn btn-default" id="lizard">Lizard</button>
+                <button type="button" class="btn btn-default" id="spock">Spock</button>
             </p>
+           <p></p>
+            <input type="button" value="Play" class="btn btn-primary" id="play">
             <p></p>
-        <input type="button" value="Play" class="btn btn-primary" id="play">
+            <div id="result"></div>
+        <div id="scoreboard">
+              <table class="table">
+                <tr>
+                    <td>Wins:</td>
+                    <td>Losses:</td>
+                    <td>Ties:</td>
+                </tr>
+                <tr>
+                    <td id="wins">0</td>
+                    <td id="losses">0</td>
+                    <td id="ties">0</td>
+                </tr>
+              </table>
+            </div>
         </div>
     </body>
     <script src="rochambeau.js"></script>
