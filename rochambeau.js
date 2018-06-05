@@ -9,22 +9,8 @@ var computerChoice;
 function storePlayerChoice(choice) {
     playerChoice = choice;
     console.log("My choice = " + playerChoice);
+    storeComputerChoice();
 }
-// The button elements
-var rockButton = document.getElementById("rock");
-var paperButton = document.getElementById("paper");
-var scissorsButton = document.getElementById("scissors");
-var lizardButton = document.getElementById("lizard");
-var spockButton = document.getElementById("spock");
-var playButton = document.getElementById("play");
-
-// Add the event handlers
-rockButton.addEventListener('click', () => {storePlayerChoice(0)});
-paperButton.addEventListener('click', () => {storePlayerChoice(1)});
-scissorsButton.addEventListener('click', () => {storePlayerChoice(2)});
-lizardButton.addEventListener('click', () => {storePlayerChoice(3)});
-spockButton.addEventListener('click', () => {storePlayerChoice(4)});
-playButton.addEventListener('click', () => {playGame()});
 
 // Generate computer's random choice
 function storeComputerChoice() {
@@ -36,6 +22,17 @@ function storePlayerChoice(choice) {
     playerChoice = choice;
     console.log("My choice = " + choice);
     storeComputerChoice();
+}
+// Updates the score
+function updateScore(val){
+    ++score[val];
+    console.log("The score is now " + score);
+}
+// Function for displaying the score
+function updateScoreBoard(){
+    document.getElementById("wins").textContent = score[0];
+    document.getElementById("losses").textContent = score[2];
+    document.getElementById("ties").textContent = score[1];
 }
 // This is the function for playing the game
 function playGame(){
@@ -89,8 +86,20 @@ function displayGameResult(result){
         document.getElementById("result").className = "alert alert-info";
     }
 }
-// Updates the score
-function updateScore(val){
-    ++score[val];
-    console.log("The score is now " + score);
-}
+
+// The button elements
+var rockButton = document.getElementById("rock");
+var paperButton = document.getElementById("paper");
+var scissorsButton = document.getElementById("scissors");
+var lizardButton = document.getElementById("lizard");
+var spockButton = document.getElementById("spock");
+var playButton = document.getElementById("play");
+
+
+// Add the event handlers
+rockButton.addEventListener('click', () => {storePlayerChoice(0)});
+paperButton.addEventListener('click', () => {storePlayerChoice(1)});
+scissorsButton.addEventListener('click', () => {storePlayerChoice(2)});
+lizardButton.addEventListener('click', () => {storePlayerChoice(3)});
+spockButton.addEventListener('click', () => {storePlayerChoice(4)});
+playButton.addEventListener('click', () => {playGame()});
